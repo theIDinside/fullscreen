@@ -11,6 +11,11 @@ Markup Shorthands: css no
 </pre>
 
 <pre class=link-defaults>
+spec:html
+    type:dfn; text:allowed to use
+    type:dfn; text:showing hint popover list
+    type:dfn; text:showing auto popover list
+
 spec:dom
     type:dfn; for:/; text:document
     type:dfn; for:/; text:element
@@ -69,11 +74,16 @@ is an <a>ordered set</a> of (<a>string</a>, <a>element</a>) <a>tuples</a>. It is
 <p>To <dfn>fullscreen an <var>element</var></dfn>:
 
 <ol>
- <li><p>Let <var>hideUntil</var> be the result of running <a>topmost popover ancestor</a> given
- <var>element</var>, null, and false.
+ <li><p>Let <var>document</var> be <var>element</var>'s <a>node document</a>.
 
- <li><p>If <var>hideUntil</var> is null, then set <var>hideUntil</var> to <var>element</var>'s
- <span>node document</span>.
+ <li><p>Let <var>hideUntil</var> be the result of running <a>topmost popover ancestor</a> given
+ <var>element</var>, <var>document</var>'s <a>showing hint popover list</a>, null, and false.
+
+ <li><p>If <var>hideUntil</var> is null, then set <var>hideUntil</var> to the result of running
+ topmost popover ancestor, given <var>element</var>, <var>document</var>'s <a>showing auto popover
+ list</a>, null, and false.
+
+ <li><p>If <var>hideUntil</var> is null, then set <var>hideUntil</var> to <var>document</var>.
 
  <li><p>Run <a>hide all popovers until</a> given <var>hideUntil</var>, false, and true.
 
@@ -725,6 +735,7 @@ Rafał Chłodnicki,
 Riff Jiang,
 Rune Lillesveen,
 Sigbjørn Vik,
+Simon Farre,
 Simon Pieters,
 Tab Atkins-Bittner,
 Takayoshi Kochi,
