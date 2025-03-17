@@ -80,7 +80,7 @@ is an <a>ordered set</a> of (<a>string</a>, <a>element</a>) <a>tuples</a>. It is
  <var>element</var>, <var>document</var>'s <a>showing hint popover list</a>, null, and false.
 
  <li><p>If <var>hideUntil</var> is null, then set <var>hideUntil</var> to the result of running
- topmost popover ancestor, given <var>element</var>, <var>document</var>'s <a>showing auto popover
+ <a>topmost popover ancestor</a>, given <var>element</var>, <var>document</var>'s <a>showing auto popover
  list</a>, null, and false.
 
  <li><p>If <var>hideUntil</var> is null, then set <var>hideUntil</var> to <var>document</var>.
